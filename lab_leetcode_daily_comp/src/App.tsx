@@ -60,7 +60,7 @@ function App() {
           </div>
           <div className="grid grid-cols-3 gap-2 mt-2">
             <Grid  />
-            <Grid  />
+            <Grid username='jerry0424'  />
             <Grid username='shirley41825' />
           </div>
           <div className="grid grid-cols-3 gap-2 mt-2">
