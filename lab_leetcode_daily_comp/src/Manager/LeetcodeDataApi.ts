@@ -1,7 +1,7 @@
 // https://github.com/alfaarghya/alfa-leetcode-api/tree/main
 // const HOST_URL =  'https://alfa-leetcode-api.onrender.com'
 const HOST_URL =  'http://localhost:3001'
-const DUMMY_DATA = false
+const DUMMY_DATA = true
 
 export const LeetcodeDataApi =  {
 
@@ -15,14 +15,14 @@ export const LeetcodeDataApi =  {
       data = await response.json()
     }
 
-    LeetcodeDataApi.qId = data.questionId
+    LeetcodeDataApi.qId = data.questionFrontendId
     LeetcodeDataApi.qTitle = data.questionTitle
 
     return data
   },
 
   getUserStatus: async (username: string) => {
-    let data = username.startsWith('ja') ?  EU2 : EU
+    let data = Math.random() > 0.5 ?  EU2 : EU
     
     if(!DUMMY_DATA) {
       const response = await fetch(HOST_URL+`/${username}/acSubmission`)

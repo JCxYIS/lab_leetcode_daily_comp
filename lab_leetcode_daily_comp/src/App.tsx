@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Grid from './Components/Grid';
 import { LeetcodeDataApi } from './Manager/LeetcodeDataApi';
-import { Util } from './Manager/Util';
 
 function App() {
 
   const [problemDate, setproblemDate] = React.useState('')
   const [problem, setProblem] = React.useState('');
   const [problemId, setProblemId] = React.useState('');
+  const [problemDifficulty, setProblemDifficulty] = React.useState('')
   // const [updateTime, setUpdateTime] = React.useState<Date|undefined>(undefined)
 
   useEffect(()=>{
@@ -19,27 +18,28 @@ function App() {
   const refreshData = async ()=>{
     const data = await LeetcodeDataApi.getProblem()
     setProblem(data.questionTitle)
-    setProblemId(data.questionId)
+    setProblemId(data.questionFrontendId)
     setproblemDate(data.date)
+    setProblemDifficulty(data.difficulty)
     // setUpdateTime(new Date())
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-100 dark:bg-slate-100">
       <div className="w-full flex justify-between items-center border-b border-black py-3 px-4">
-        <div className="font-bold text-2xl">
+        <div className="font-bold text-5xl">
           {problemId}: {problem}
         </div>
         <div className="text-right">
-          <div className='text-xl'>{problemDate}</div>
-          {/* <div>{updateTime ? Util.formatTime(updateTime) : ''}</div> */}
+          <div className='text-4xl'>{problemDate}</div>
+          <div className='text-2xl'>{problemDifficulty}</div>
         </div>
       </div>
       
       <div className="flex flex-row mt-4 ">
         {/* 318 */}
-        <div className="flex flex-col px-3">
-          318
+        <div className="flex flex-col px-5">
+        <div className='text-center text-3xl font-bold pb-3'>318</div>
           {/* Row 1 */}
           <div className="grid grid-cols-3 gap-2">
             <Grid  />
@@ -70,14 +70,16 @@ function App() {
           </div>
         </div>
 
+        <div className='bg-slate-100' style={{width: '6px', background: '#88888888'}}></div>
+
         {/* 317 */}
-        <div className="flex flex-col px-3">
-        317
+        <div className="flex flex-col px-5">
+          <div className='text-center text-3xl font-bold pb-3'>317</div>
           {/* Row 1 */}
           <div className="grid grid-cols-3 gap-2">
             <Grid border={false} />
-            <Grid username='tina1619' />
-            <Grid username='shirley41825' />
+            <Grid border={false} />
+            <Grid />
           </div>
           {/* Row 2 */}
           <div className="grid grid-cols-3 gap-2 mt-2">
