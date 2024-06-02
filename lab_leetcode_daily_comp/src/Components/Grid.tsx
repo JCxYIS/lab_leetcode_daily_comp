@@ -35,7 +35,7 @@ export default function Grid({ border = true, username = '' }) {
 			}
 		}
 		refreshData()
-		const interval = setInterval(refreshData, (180 + 120*Math.random()) * 1000); // s
+		const interval = setInterval(refreshData, (600 + 120*Math.random()) * 1000); // s
 		return () => clearInterval(interval); // 清除 timer ，防止 memory leak
 	}, [username])
 

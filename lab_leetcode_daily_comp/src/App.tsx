@@ -43,23 +43,23 @@ function App() {
           {/* Row 1 */}
           <div className="grid grid-cols-3 gap-2">
             <Grid  />
-            <Grid  />
+            <Grid username='s72289814' />
             <Grid  />
           </div>
           {/* Row 2 */}
           <div className="grid grid-cols-3 gap-2 mt-2">
+            <Grid username='ching60627' />
             <Grid  />
-            <Grid  />
-            <Grid  />
+            <Grid />
           </div>
           {/* Row 3 */}
           <div className="grid grid-cols-3 gap-2 mt-2">
-            <Grid  />
-            <Grid  />
+            <Grid username='ilan0u0' />
+            <Grid username='jameslu216' />
             <Grid username='tina1619'  />
           </div>
           <div className="grid grid-cols-3 gap-2 mt-2">
-            <Grid  />
+            <Grid username='hizashi1010111' />
             <Grid username='jerry0424'  />
             <Grid username='shirley41825' />
           </div>

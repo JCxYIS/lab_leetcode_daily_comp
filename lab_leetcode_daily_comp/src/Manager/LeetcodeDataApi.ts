@@ -1,7 +1,7 @@
 // https://github.com/alfaarghya/alfa-leetcode-api/tree/main
-// const HOST_URL =  'https://alfa-leetcode-api.onrender.com'
-const HOST_URL =  'http://localhost:3001'
-const DUMMY_DATA = true
+const HOST_URL =  'https://alfa-leetcode-api.onrender.com'
+// const HOST_URL =  'http://localhost:3000'
+const DUMMY_DATA = false
 
 export const LeetcodeDataApi =  {
 
@@ -12,6 +12,7 @@ export const LeetcodeDataApi =  {
     let data = EX;
     if(!DUMMY_DATA) {
       const response = await fetch(HOST_URL+'/daily')
+      // const response = await fetch(HOST_URL+'/select?titleSlug=score-of-a-string')
       data = await response.json()
     }
 
