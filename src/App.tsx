@@ -96,7 +96,7 @@ function App() {
           <div className="grid grid-cols-3 gap-2 mt-2">
             <Grid  />
             <Grid  />
-            <Grid  />
+            <Grid username='leon890820' />
           </div>
           <div className="grid grid-cols-3 gap-2 mt-2">
             <Grid  />
