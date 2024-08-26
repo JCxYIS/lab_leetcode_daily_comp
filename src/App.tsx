@@ -42,31 +42,31 @@ function App() {
         <div className='text-center text-3xl font-bold pb-3'>318</div>
           {/* Row 1 */}
           <div className="grid grid-cols-3 gap-2">
-            <Grid  />
+            <Grid username='ching60627'  />
             <Grid username='s72289814' />
             <Grid  />
           </div>
           {/* Row 2 */}
           <div className="grid grid-cols-3 gap-2 mt-2">
-            <Grid username='ching60627' />
-            <Grid  />
+            <Grid username='hizashi1010111'  />
+            <Grid username='jacky50706' />
             <Grid />
           </div>
           {/* Row 3 */}
           <div className="grid grid-cols-3 gap-2 mt-2">
-            <Grid username='ilan0u0' />
+            <Grid username='tina1619' />
             <Grid username='jameslu216' />
-            <Grid username='tina1619'  />
+            <Grid   />
           </div>
           <div className="grid grid-cols-3 gap-2 mt-2">
-            <Grid username='hizashi1010111' />
+            <Grid  />
             <Grid username='jerry0424'  />
             <Grid username='shirley41825' />
           </div>
           <div className="grid grid-cols-3 gap-2 mt-2">
             <Grid border={false} />
-            <Grid  />
-            <Grid  />
+            <Grid username='shaker1009'  />
+            <Grid username='ilan0u0' />
           </div>
         </div>
 
@@ -84,23 +84,23 @@ function App() {
           {/* Row 2 */}
           <div className="grid grid-cols-3 gap-2 mt-2">
             <Grid border={false} />
-            <Grid username='shaker1009' />
-            <Grid username='bananachen207' />
+            <Grid username='leon890820' />
+            <Grid username='angel890123' />
           </div>
           {/* Row 3 */}
           <div className="grid grid-cols-3 gap-2 mt-2">
             <Grid username='jason27436' />
-            <Grid username='jcyis' />
+            <Grid  />
             <Grid username='renpasa' />
           </div>
           <div className="grid grid-cols-3 gap-2 mt-2">
+            <Grid username='hui0309' />
+            <Grid username='JinWei5208' />
             <Grid  />
-            <Grid  />
-            <Grid username='leon890820' />
           </div>
           <div className="grid grid-cols-3 gap-2 mt-2">
-            <Grid  />
-            <Grid username='angel890123' />
+            <Grid username='jcyis'  />
+            <Grid username='bananachen207' />
             <Grid />
           </div>
         </div>

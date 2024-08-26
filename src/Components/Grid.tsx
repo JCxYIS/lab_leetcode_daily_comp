@@ -31,7 +31,7 @@ export default function Grid({ border = true, username = '' }) {
 
 			// api call
 			const response = await LeetcodeDataApi.getUserStatus(username)
-			const solveData = response.submission.find((s: { title: string }) => s.title === LeetcodeDataApi.qTitle)
+			const solveData = response.submission?.find((s: { title: string }) => s.title === LeetcodeDataApi.qTitle)
 			if (solveData) {
 				setPassTime(new Date(parseInt(solveData.timestamp) * 1000))  // unix to datetime
 				setPassLang(solveData.lang)
@@ -88,7 +88,7 @@ export default function Grid({ border = true, username = '' }) {
 
 			{/* Bottom text */}
 			<div className="flex justify-between  px-2 pr-3 py-2">
-				<div className="text-l font-bold">{(username === "bananachen207") ? "IGYM's Dog" : username }</div>
+				<div className="text-l font-bold">{(username === "bananachen207") ? "Dog's Dog" : username }</div>
 				<div className="text-l text-right">{passLang}</div>
 			</div>
 			<div className='grow flex justify-center items-center text-center text-5xl pb-5'>
