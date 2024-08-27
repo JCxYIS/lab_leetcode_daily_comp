@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import Grid from './Components/Grid';
 import { LeetcodeDataApi } from './Manager/LeetcodeDataApi';
 import { Config } from './Config';
 
@@ -54,10 +53,10 @@ function App() {
 
 
       {/* container */}
-      <div className="flex flex-row  item-center mt-1">
+      <div className="flex flex-row  item-center mt-3">
         {/* 318 */}
         <section>
-          <h3 className='text-3xl text-center font-semibold pb-1'>~ 317 ~</h3>
+          <h3 className='text-3xl text-center font-semibold py-1'>~ 317 ~</h3>
           <div className="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-3 bg-white dark:bg-gray-800">
             {Config.lab318.map((element, index) => <element.type key={index} index={index} {...element.props} />)}
           </div>
@@ -68,7 +67,7 @@ function App() {
 
         {/* 317 */}
         <section>
-          <h3 className='text-3xl text-center font-semibold pb-1'>~ 318 ~</h3>
+          <h3 className='text-3xl text-center font-semibold py-1'>~ 318 ~</h3>
           <div className="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-3 bg-white dark:bg-gray-800">
            {Config.lab317.map((element, index) => <element.type key={index} index={index+Config.lab317.length} {...element.props} />)}
           </div>
@@ -79,7 +78,7 @@ function App() {
 
         {/* 老大們 */}
         <section>
-          <h3 className='text-3xl text-center font-semibold pb-1'>老大們</h3>
+          <h3 className='text-3xl text-center font-semibold py-1'>老大們</h3>
           <div /*style={{ maxHeight: '80vh', overflow: 'scroll' }}*/>
             <div className="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-1 bg-white dark:bg-gray-800">
               {Config.labExtra.map((element, index) => <element.type key={index} index={index+Config.lab317.length+Config.lab318.length} {...element.props} />)}

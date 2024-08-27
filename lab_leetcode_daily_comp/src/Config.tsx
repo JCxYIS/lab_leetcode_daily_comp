@@ -41,12 +41,12 @@ export const Config = {
         <Grid  />,
         <Grid username='jason27436' />,
         <Grid  />,
-
+        
         <Grid username='jcyis' subname='始作俑者' />,
         <Grid username='bananachen207' subname="Dog's Dog" />,
         <Grid username='renpasa' />,
     ],
-
+    
     labExtra: [
         <Grid username='shaker1009' subname='抖哥抖' />,
         <Grid username='leon890820' subname='' />,

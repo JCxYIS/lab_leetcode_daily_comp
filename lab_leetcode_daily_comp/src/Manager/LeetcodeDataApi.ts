@@ -2,6 +2,8 @@
 // const HOST_URL =  'https://alfa-leetcode-api.onrender.com'
 const HOST_URL =  'http://localhost:3000'
 const USE_DUMMY_DATA = false
+console.log('use dummy data:', USE_DUMMY_DATA)
+
 
 export const LeetcodeDataApi =  {
 

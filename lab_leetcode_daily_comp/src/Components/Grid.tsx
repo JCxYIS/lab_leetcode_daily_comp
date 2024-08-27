@@ -51,7 +51,7 @@ export default function Grid({ index=0, username='', subname='' }) {
 		refreshProfile()
 		const interval = setInterval(refreshData, 600 * 1000); // wait 600s
 		return () => clearInterval(interval); // 清除 timer ，防止 memory leak
-	}, [username])
+	}, [username, index])
 	
 	
 
@@ -73,19 +73,21 @@ export default function Grid({ index=0, username='', subname='' }) {
 	// )
 
 	return (
-		<figure className={`flex flex-col px-6 py-4 ${backgroundColor} border-b border-gray-300 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700`}>
+		<figure className={`flex flex-col px-4 pt-3 pb-1 ${backgroundColor} border-b border-gray-300 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700`}>
 			<figcaption className="flex items-center">
 				<img className="rounded-full w-10 h-10" src={avatarSrc} alt="avatar" />
-				<div className="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
-					<div>{fillValue(username)}</div>
-					<div className="text-sm text-gray-500 dark:text-gray-400 ">{fillValue(subname)}</div>
+				<div className="ms-3 dark:text-white text-left rtl:text-right">
+					<div className='text-lg font-bold'>{fillValue(username)}</div>
+					<div className="text-sm text-gray-500 dark:text-gray-400 ">{fillValue(subname || username)}</div>
 				</div>
 			</figcaption>
-			<blockquote className="text-center mx-auto mt-3 text-gray-500  dark:text-gray-400">
-				<h3 className="text-gray-800 dark:text-white mb-2" style={{fontSize: '2.5rem', lineHeight: '2.1rem', fontWeight: 700 }}>
+			<blockquote className="text-center mx-auto text-gray-500  dark:text-gray-400">
+				<h3 className="text-gray-800 dark:text-white" style={{fontSize: '2.8rem', lineHeight: '3.4rem', fontWeight: 700 }}>
 					{passTime ? Util.formatTime(passTime) : '　　　　'}
 				</h3>
-				<h1>{fillValue(passLang.toUpperCase())}</h1>
+				<h6 className="text-m text-gray-500 dark:text-gray-400 ">
+					{fillValue(passLang.toUpperCase())}
+				</h6>
 			</blockquote>
 		</figure>
 	)
