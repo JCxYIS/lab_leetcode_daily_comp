@@ -59,9 +59,9 @@ function App() {
             <Grid   />
           </div>
           <div className="grid grid-cols-3 gap-2 mt-2">
+            <Grid  username='shirley41825' />
             <Grid  />
-            <Grid username='jerry0424'  />
-            <Grid username='shirley41825' />
+            <Grid  />
           </div>
           <div className="grid grid-cols-3 gap-2 mt-2">
             <Grid border={false} />
@@ -89,19 +89,19 @@ function App() {
           </div>
           {/* Row 3 */}
           <div className="grid grid-cols-3 gap-2 mt-2">
-            <Grid username='jason27436' />
             <Grid  />
-            <Grid username='renpasa' />
+            <Grid  />
+            <Grid username='jerry0424' />
           </div>
           <div className="grid grid-cols-3 gap-2 mt-2">
             <Grid username='hui0309' />
+            <Grid username='jason27436' />
             <Grid username='JinWei5208' />
-            <Grid  />
           </div>
           <div className="grid grid-cols-3 gap-2 mt-2">
             <Grid username='jcyis'  />
             <Grid username='bananachen207' />
-            <Grid />
+            <Grid username='renpasa' />
           </div>
         </div>
       </div>
