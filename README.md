@@ -8,11 +8,10 @@
 ### How to run
 
 ```
-npm i
-npm run start
+./run.sh
 ```
 
 #### API Deps
-https://github.com/alfaarghya/alfa-leetcode-api (API endpoint: )
+https://github.com/alfaarghya/alfa-leetcode-api 
 
 Can also change `HOST_URL` in `LeetcodeDataApi.ts`.

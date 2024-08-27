@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import Grid from './Components/Grid';
 import { LeetcodeDataApi } from './Manager/LeetcodeDataApi';
+import { Config } from './Config';
 
 function App() {
 
@@ -11,11 +12,24 @@ function App() {
   const [problemDifficulty, setProblemDifficulty] = React.useState('')
   // const [updateTime, setUpdateTime] = React.useState<Date|undefined>(undefined)
 
-  useEffect(()=>{
+  useEffect(() => {
     refreshData()
-  },[]);
+  }, []);
 
-  const refreshData = async ()=>{
+  const difficultyColor = (difficulty: string) => {
+    switch (difficulty) {
+      case 'Easy':
+        return 'green'
+        case 'Medium':
+        return 'yellow'
+      case 'Hard':
+        return 'red'
+      default:
+        return 'gray'
+    }
+  }
+
+  const refreshData = async () => {
     const data = await LeetcodeDataApi.getProblem()
     setProblem(data.questionTitle)
     setProblemId(data.questionFrontendId)
@@ -25,8 +39,10 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100 dark:bg-slate-100">
-      <div className="w-full flex justify-between items-center border-b border-black py-3 px-4">
+    <div className={`flex flex-col items-center h-screen bg-${difficultyColor(problemDifficulty)}-50 dark:bg-slate-100`}>
+      
+      {/* header */}
+      <section className={`w-full flex justify-between items-center border-b border-black bg-${difficultyColor(problemDifficulty)}-100 py-2 px-4`}>
         <div className="font-bold text-5xl">
           {problemId}: {problem}
         </div>
@@ -34,79 +50,46 @@ function App() {
           <div className='text-4xl'>{problemDate}</div>
           <div className='text-2xl'>{problemDifficulty}</div>
         </div>
-      </div>
-      
-      <div className="flex flex-row mt-4 ">
-        {/* 318 */}
-        <div className="flex flex-col px-5">
-        <div className='text-center text-3xl font-bold pb-3'>318</div>
-          {/* Row 1 */}
-          <div className="grid grid-cols-3 gap-2">
-            <Grid username='ching60627'  />
-            <Grid username='s72289814' />
-            <Grid  />
-          </div>
-          {/* Row 2 */}
-          <div className="grid grid-cols-3 gap-2 mt-2">
-            <Grid username='hizashi1010111'  />
-            <Grid username='jacky50706' />
-            <Grid />
-          </div>
-          {/* Row 3 */}
-          <div className="grid grid-cols-3 gap-2 mt-2">
-            <Grid username='tina1619' />
-            <Grid username='jameslu216' />
-            <Grid   />
-          </div>
-          <div className="grid grid-cols-3 gap-2 mt-2">
-            <Grid  username='shirley41825' />
-            <Grid  />
-            <Grid  />
-          </div>
-          <div className="grid grid-cols-3 gap-2 mt-2">
-            <Grid border={false} />
-            <Grid username='shaker1009'  />
-            <Grid username='ilan0u0' />
-          </div>
-        </div>
+      </section>
 
-        <div className='bg-slate-100' style={{width: '6px', background: '#88888888'}}></div>
+
+      {/* container */}
+      <div className="flex flex-row  item-center mt-1">
+        {/* 318 */}
+        <section>
+          <h3 className='text-3xl text-center font-semibold pb-1'>~ 317 ~</h3>
+          <div className="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-3 bg-white dark:bg-gray-800">
+            {Config.lab318.map((element, index) => <element.type key={index} index={index} {...element.props} />)}
+          </div>
+        </section>
+
+        {/* bar at the middle */}
+        <div className='mx-8'></div>
 
         {/* 317 */}
-        <div className="flex flex-col px-5">
-          <div className='text-center text-3xl font-bold pb-3'>317</div>
-          {/* Row 1 */}
-          <div className="grid grid-cols-3 gap-2">
-            <Grid border={false} />
-            <Grid border={false} />
-            <Grid />
+        <section>
+          <h3 className='text-3xl text-center font-semibold pb-1'>~ 318 ~</h3>
+          <div className="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-3 bg-white dark:bg-gray-800">
+           {Config.lab317.map((element, index) => <element.type key={index} index={index+Config.lab317.length} {...element.props} />)}
           </div>
-          {/* Row 2 */}
-          <div className="grid grid-cols-3 gap-2 mt-2">
-            <Grid border={false} />
-            <Grid username='leon890820' />
-            <Grid username='angel890123' />
+        </section>
+
+        {/* bar at the middle */}
+        <div className='mx-12'  style={{ width: '1.5px', background: '#44444488' }}></div>
+
+        {/* 老大們 */}
+        <section>
+          <h3 className='text-3xl text-center font-semibold pb-1'>老大們</h3>
+          <div /*style={{ maxHeight: '80vh', overflow: 'scroll' }}*/>
+            <div className="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-1 bg-white dark:bg-gray-800">
+              {Config.labExtra.map((element, index) => <element.type key={index} index={index+Config.lab317.length+Config.lab318.length} {...element.props} />)}
+            </div>
           </div>
-          {/* Row 3 */}
-          <div className="grid grid-cols-3 gap-2 mt-2">
-            <Grid  />
-            <Grid  />
-            <Grid username='jerry0424' />
-          </div>
-          <div className="grid grid-cols-3 gap-2 mt-2">
-            <Grid username='hui0309' />
-            <Grid username='jason27436' />
-            <Grid username='JinWei5208' />
-          </div>
-          <div className="grid grid-cols-3 gap-2 mt-2">
-            <Grid username='jcyis'  />
-            <Grid username='bananachen207' />
-            <Grid username='renpasa' />
-          </div>
-        </div>
+        </section>
+
+        <div className='bg bg-red-50 bg-green-50 bg-yellow-50 bg-red-100 bg-yellow-100 bg-green-100'></div>
+
       </div>
-
-
     </div>
   );
 }
